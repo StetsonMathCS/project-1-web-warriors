@@ -1,4 +1,4 @@
-# Project 1
+# Web Warriors (Project 1)
 
 **Full Names:** Will Holland, 
 **Class and Section:** CINF 301, Section 1  
