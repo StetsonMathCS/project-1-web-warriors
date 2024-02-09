@@ -1,0 +1,27 @@
+#content IMG {
+    max-width: 100%;
+  }
+
+.row {
+    clear: left;
+    overflow: hidden;
+}
+
+.column {
+    float: left;
+    vertical-align: top;
+}
+
+.full {
+width: 100%;
+}
+
+.half {
+    width: 50%;
+}
+
+@media screen and (max-width: 640px) {
+    .half {
+      width: 100%;
+    }
+}
