@@ -42,13 +42,13 @@
           <a class="navbar-brand" href="#">
             <img src="./images/logo.png" alt="Logo" style="height: 40px;"> <!-- Adjust 'src' and 'height' as needed -->
           </a>
-      
+
           <!-- Toggler Button -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-      
+
           <!-- Collapsible Navbar Content -->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto text-white">
@@ -58,7 +58,7 @@
           </div>
         </div>
       </nav>
-      
+
       <div class="card mb-1">
         <div class="card-body text-center">
           The Stetson Corpus of Individual Differences and Eye Movements SCIDEM
@@ -106,119 +106,171 @@
                 <!-- Collapsible card header -->
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                      aria-expanded="true" aria-controls="collapseFour">
                       Identifying Variables
                     </button>
                   </h5>
                 </div>
-              
+
                 <!-- Collapsible content -->
-                <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                
-                    <!-- Your existing card content -->
-                    <div class="card-body shadow rounded-4 scrollable-card-body">
-                    
-            
-                      <div class="container">
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Participant ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Trial Order
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Unique Word ID
-                              </label>
-                            </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+
+                  <!-- Your existing card content -->
+                  <div class="card-body shadow rounded-4 scrollable-card-body">
+
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Participant ID
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                IA ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage Text
-                              </label>
-                            </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Trial Order
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Word
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Word Cleaned
-                              </label>
-                            </div>
-    
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Unique Word ID
+                            </label>
                           </div>
                         </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              IA ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage Text
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Word
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Word Cleaned
+                            </label>
+                          </div>
+
+                        </div>
                       </div>
-    
                     </div>
+
                   </div>
                 </div>
-              
+              </div>
+
               <div class="card shadow rounded-4 mb-3">
                 <!-- Collapsible card header -->
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                      aria-expanded="true" aria-controls="collapseThree">
                       Eye Movement Data
                     </button>
                   </h5>
                 </div>
-              
+
                 <!-- Collapsible content -->
-                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                
-                    <!-- Your existing card content -->
-                    <div class="card-body shadow rounded-4 scrollable-card-body">
-                    
-            
-                      <div class="container">
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+
+                  <!-- Your existing card content -->
+                  <div class="card-body shadow rounded-4 scrollable-card-body">
+
+                    <h5 class="card-title">Trial Data</h5>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Eye Tracked
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Total Trial Time
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Total Trial Fixation Count
+                            </label>
+                          </div>
+
+
+
+                        </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Total Trial Ias
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Total Trial IAs Visited
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Percent of IAs Visited
+                            </label>
+                          </div>
+
+                        </div>
+
+
+                        <h5 class="card-title">Interest Area Size</h5>
                         <div class="row">
                           <div class="col">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                               <label class="form-check-label" for="flexCheckDefault">
-                                Participant ID
+                                IA Size
                               </label>
                             </div>
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                               <label class="form-check-label" for="flexCheckChecked">
-                                Trial Order
+                                IA Bottom Side Pixel
                               </label>
                             </div>
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                               <label class="form-check-label" for="flexCheckDefault">
-                                Unique Word ID
+                                IA Top Side Pixel
                               </label>
                             </div>
                           </div>
@@ -226,212 +278,197 @@
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                               <label class="form-check-label" for="flexCheckDefault">
-                                Passage ID
+                                IA Left Side Pixel
                               </label>
                             </div>
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                               <label class="form-check-label" for="flexCheckChecked">
-                                IA ID
+                                IA Right Side Pixel
                               </label>
                             </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage Text
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Word
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Word Cleaned
-                              </label>
-                            </div>
-    
                           </div>
                         </div>
+
                       </div>
-    
                     </div>
+
                   </div>
                 </div>
-              
+              </div>
+
               <div class="card shadow rounded-4 mb-3">
                 <!-- Collapsible card header -->
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                      aria-expanded="true" aria-controls="collapseTwo">
                       Lexical Variables
                     </button>
                   </h5>
                 </div>
-              
+
                 <!-- Collapsible content -->
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                
-                    <!-- Your existing card content -->
-                    <div class="card-body shadow rounded-4 scrollable-card-body">
-                    
-            
-                      <div class="container">
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Participant ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Trial Order
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Unique Word ID
-                              </label>
-                            </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+
+                  <!-- Your existing card content -->
+                  <div class="card-body shadow rounded-4 scrollable-card-body">
+
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Participant ID
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                IA ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage Text
-                              </label>
-                            </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Trial Order
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Word
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Word Cleaned
-                              </label>
-                            </div>
-    
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Unique Word ID
+                            </label>
                           </div>
                         </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              IA ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage Text
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Word
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Word Cleaned
+                            </label>
+                          </div>
+
+                        </div>
                       </div>
-    
                     </div>
+
                   </div>
                 </div>
-              
+              </div>
+
               <div class="card shadow rounded-4 mb-3">
                 <!-- Collapsible card header -->
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne">
                       Individual Differences
                     </button>
                   </h5>
                 </div>
-              
+
                 <!-- Collapsible content -->
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                
-                    <!-- Your existing card content -->
-                    <div class="card-body shadow rounded-4 scrollable-card-body">
-                    
-            
-                      <div class="container">
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Participant ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Trial Order
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Unique Word ID
-                              </label>
-                            </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+
+                  <!-- Your existing card content -->
+                  <div class="card-body shadow rounded-4 scrollable-card-body">
+
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Participant ID
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                IA ID
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Passage Text
-                              </label>
-                            </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Trial Order
+                            </label>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Word
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Word Cleaned
-                              </label>
-                            </div>
-    
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Unique Word ID
+                            </label>
                           </div>
                         </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              IA ID
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Passage Text
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Word
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Word Cleaned
+                            </label>
+                          </div>
+
+                        </div>
                       </div>
-    
                     </div>
+
                   </div>
                 </div>
+              </div>
             </div>
 
           </div>
           <div class="col-md-3">
             <!-- Third column -->
-   
-            
+
+
 
           </div>
         </div>
@@ -441,7 +478,7 @@
     <footer class="mt-auto bg-body-tertiary text-center text-lg-start">
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
         © Web Warriors: 2024
-      
+
       </div>
     </footer>
 </body>
