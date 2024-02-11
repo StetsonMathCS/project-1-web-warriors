@@ -32,6 +32,8 @@
       rel="stylesheet"
       href="https://www.stetson.edu/software/webgarage/system/themes/stetson-university/assets/css/theme.min.css?v=20230210"
     />
+    <link rel="stylesheet" href="./css/index.css" />
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -696,31 +698,20 @@
                     >here</a
                   >
                 </p>
-                <div class="row mt-4">
-                  <div class="form-check col-sm">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="dataCleaningFile"
-                      id="baselineDataCleaning"
-                      checked
-                    />
-                    <label class="form-check-label" for="baselineDataCleaning">
-                      Baseline Data Cleaning File
-                    </label>
-                  </div>
-                  <div class="form-check col-sm">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="dataCleaningFile"
-                      id="modalDataCleaning"
-                    />
-                    <label class="form-check-label" for="modalDataCleaning">
-                      Modal Data Cleaning File
-                    </label>
-                  </div>
-                </div>
+                <!-- <div class="row mt-4"> -->
+                <p><strong>What is your preferred Option?</strong></p>
+                <span
+                  class="badge rounded-pill bg-light text-dark"
+                  onclick="toggleBadgeSelection(event)"
+                  >baseline</span
+                >
+                <span
+                  class="badge rounded-pill bg-light text-dark"
+                  onclick="toggleBadgeSelection(event)"
+                  >modal</span
+                >
+
+                <!-- </div> -->
                 <!-- <p>
                   <a
                     class="button"
@@ -730,6 +721,632 @@
                     >Senior Project Archive</a
                   >
                 </p> -->
+              </div>
+              <hr class="dotted-border mt-4" />
+              <div class="data-section">
+                <div class="card shadow rounded-4 mb-3">
+                  <!-- Collapsible card header -->
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="true"
+                        aria-controls="collapseFour"
+                      >
+                        Identifying Variables
+                      </button>
+                    </h5>
+                  </div>
+
+                  <!-- Collapsible content -->
+                  <div
+                    id="collapseFour"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <!-- Your existing card content -->
+                    <div
+                      class="card-body shadow rounded-4 scrollable-card-body"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Participant ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Trial Order
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Unique Word ID
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                IA ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage Text
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Word
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Word Cleaned
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card shadow rounded-4 mb-3">
+                  <!-- Collapsible card header -->
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="true"
+                        aria-controls="collapseThree"
+                      >
+                        Eye Movement Data
+                      </button>
+                    </h5>
+                  </div>
+
+                  <!-- Collapsible content -->
+                  <div
+                    id="collapseThree"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <!-- Your existing card content -->
+                    <div
+                      class="card-body shadow rounded-4 scrollable-card-body"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Participant ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Trial Order
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Unique Word ID
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                IA ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage Text
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Word
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Word Cleaned
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card shadow rounded-4 mb-3">
+                  <!-- Collapsible card header -->
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        Lexical Variables
+                      </button>
+                    </h5>
+                  </div>
+
+                  <!-- Collapsible content -->
+                  <div
+                    id="collapseTwo"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <!-- Your existing card content -->
+                    <div
+                      class="card-body shadow rounded-4 scrollable-card-body"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Participant ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Trial Order
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Unique Word ID
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                IA ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage Text
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Word
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Word Cleaned
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card shadow rounded-4 mb-3">
+                  <!-- Collapsible card header -->
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Individual Differences
+                      </button>
+                    </h5>
+                  </div>
+
+                  <!-- Collapsible content -->
+                  <div
+                    id="collapseOne"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <!-- Your existing card content -->
+                    <div
+                      class="card-body shadow rounded-4 scrollable-card-body"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Participant ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Trial Order
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Unique Word ID
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                IA ID
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Passage Text
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Word
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Word Cleaned
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

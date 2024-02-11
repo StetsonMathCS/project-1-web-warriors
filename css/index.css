@@ -1,0 +1,51 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,900&family=Ubuntu:ital,wght@0,300;0,400;1,300;1,500;1,700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: rfs(1rem);
+  display: flex;
+  flex-direction: column;
+  background-color:  rgb(226, 238, 236);;
+}
+
+.navbar {
+  background-color: rgb(31, 68, 63);
+}
+.dotted-border {
+  border: 1px dotted black;
+} */
+:root {
+    --rfs-factor: 10; /* Adjust the factor to control how dramatic the scaling is */
+  }
+  main {
+    flex: 1;
+  }
+
+  .badge {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for elevation */
+    border: 1px solid black; /* Black border */
+    padding: 0.5em 1em; /* Increase padding to make the badge larger */
+    font-size: 1rem; /* Increase font size */
+    transition: box-shadow 0.3s; /* Transition for hover effect */
+  }
+
+  .badge:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+
+  .selected-badge {
+    background-color:  rgb(31, 68, 63) !important; /* Change background to green */
+    color: white !important; /* Change text color to white for better readability */
+  }
+
+  .scrollable-card-body {
+    max-height: 300px; /* Adjust this value as per your design needs */
+    overflow-y: auto;  /* Enables vertical scrolling */
+  }
+
+  @media (max-width: 768px) {
+    .navbar-brand img {
+      height: 30px; /* Smaller size for smaller screens */
+    }
+  }
