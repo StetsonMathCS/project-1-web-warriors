@@ -16,36 +16,46 @@ body {
   border: 1px dotted black;
 } */
 :root {
-    --rfs-factor: 10; /* Adjust the factor to control how dramatic the scaling is */
-  }
-  main {
-    flex: 1;
-  }
+  --rfs-factor: 10; /* Adjust the factor to control how dramatic the scaling is */
+}
+main {
+  flex: 1;
+}
 
-  .badge {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for elevation */
-    border: 1px solid black; /* Black border */
-    padding: 0.5em 1em; /* Increase padding to make the badge larger */
-    font-size: 1rem; /* Increase font size */
-    transition: box-shadow 0.3s; /* Transition for hover effect */
-  }
+.badge {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for elevation */
+  border: 1px solid black; /* Black border */
+  padding: 0.5em 1em; /* Increase padding to make the badge larger */
+  font-size: 1rem; /* Increase font size */
+  transition: box-shadow 0.3s; /* Transition for hover effect */
+}
 
-  .badge:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
-  }
+.badge:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
 
-  .selected-badge {
-    background-color:  rgb(31, 68, 63) !important; /* Change background to green */
-    color: white !important; /* Change text color to white for better readability */
-  }
+.selected-badge {
+  background-color: rgb(31, 68, 63) !important; /* Change background to green */
+  color: white !important; /* Change text color to white for better readability */
+}
 
-  .scrollable-card-body {
-    max-height: 300px; /* Adjust this value as per your design needs */
-    overflow-y: auto;  /* Enables vertical scrolling */
-  }
+.card-title {
+  color: green;
+}
 
-  @media (max-width: 768px) {
-    .navbar-brand img {
-      height: 30px; /* Smaller size for smaller screens */
-    }
+.scrollable-card-body {
+  max-height: 300px; /* Adjust this value as per your design needs */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* Add this to your CSS file or in a <style> tag in your HTML */
+.navbar-brand img {
+  max-width: 100%; /* Ensures the image is never wider than its container */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 60px; /* Adjust the size on smaller screens */
   }
+}

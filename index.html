@@ -39,9 +39,17 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script>
+      function toggleBadgeSelection(event) {
+        event.target.classList.toggle("selected-badge");
+      }
+    </script>
   </head>
+
   <body class="d-flex flex-column h-100">
-    <div id="banner"><div id="banner-alert"></div></div>
+    <div id="banner">
+      <div id="banner-alert"></div>
+    </div>
     <a href="#layout" tabindex="0" class="offscreen"
       ><strong>Skip to Content</strong></a
     >
@@ -59,6 +67,7 @@
                   https://www.stetson.edu/software/webgarage/system/themes/stetson-university/assets/images/logo.png,
                   https://www.stetson.edu/software/webgarage/system/themes/stetson-university/assets/images/logo-x2.png 2x
                 "
+                class="img-fluid"
                 width="235"
                 height="80"
                 alt="Stetson University Logo"
@@ -762,6 +771,7 @@
                                 value=""
                                 id="flexCheckDefault"
                                 checked
+                                
                               />
                               <label
                                 class="form-check-label"
@@ -807,6 +817,7 @@
                                 value=""
                                 id="flexCheckDefault"
                                 checked
+                                
                               />
                               <label
                                 class="form-check-label"
@@ -910,6 +921,7 @@
                     >
                       <div class="container">
                         <div class="row">
+                          <h5 class="card-title">Trial Data</h5>
                           <div class="col">
                             <div class="form-check">
                               <input
@@ -917,13 +929,13 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
                                 for="flexCheckDefault"
                               >
-                                Participant ID
+                                Eye Tracked
                               </label>
                             </div>
                             <div class="form-check">
@@ -937,7 +949,7 @@
                                 class="form-check-label"
                                 for="flexCheckChecked"
                               >
-                                Trial Order
+                                Total Trial Time
                               </label>
                             </div>
                             <div class="form-check">
@@ -951,7 +963,7 @@
                                 class="form-check-label"
                                 for="flexCheckDefault"
                               >
-                                Unique Word ID
+                                Total Trial Fixation Count
                               </label>
                             </div>
                           </div>
@@ -962,13 +974,13 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
                                 for="flexCheckDefault"
                               >
-                                Passage ID
+                                Total Trial Ias
                               </label>
                             </div>
                             <div class="form-check">
@@ -982,7 +994,7 @@
                                 class="form-check-label"
                                 for="flexCheckChecked"
                               >
-                                IA ID
+                                Total Trial IAs Visited
                               </label>
                             </div>
                             <div class="form-check">
@@ -996,38 +1008,641 @@
                                 class="form-check-label"
                                 for="flexCheckDefault"
                               >
-                                Passage Text
+                                Percent of IAs Visited
                               </label>
                             </div>
                           </div>
-                          <div class="col">
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckDefault"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexCheckDefault"
-                              >
-                                Word
-                              </label>
+
+                          <h5 class="card-title">Interest Area Size</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  IA Size
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  IA Bottom Side Pixel
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  IA Top Side Pixel
+                                </label>
+                              </div>
                             </div>
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexCheckChecked"
-                              >
-                                Word Cleaned
-                              </label>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  IA Left Side Pixel
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  IA Right Side Pixel
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="card-title">Total Reading Time</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  IA Total Reading Time
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Percent of Time Spent in this IA
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="card-title">First Fixation Data</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Fixation Duration
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Fixation Duration Ordinal Sequence
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Previously Fixated IA
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Fixation Run Index
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Number Previous of IAs Fixated
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Fixation X
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Fixation Y
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Pass?
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h5 class="card-title">First Run Data</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Gaze Duration
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Gaze Duration % of Total Time
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Run Fixation Count
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Fixation Percent
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Run Landing Position
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Run Launch Site
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Run Saccade Amplitude
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Legal?
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Run Saccade Angle
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  First Run Saccade Index
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Legal Immediate?
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h5 class="card-title">Fixation Data</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Fixation Percent
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Fixation Count
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Legal?
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  First Run Saccade Angle
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="card-title">Regression Data</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Regression In Count
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckChecked"
+                                >
+                                  Regression Out
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Regression Out Count
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Regression Out Full
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Regression Out Full Count
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Regression Path Duration
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="card-title">Other Eye Movement Data</h5>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  IA Run Count
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Selective Regression Path Duration
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                  Skip?
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                  
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault"
+                                >
+                                Spillover Time
+                                </label>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1073,7 +1688,7 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
@@ -1118,7 +1733,7 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
@@ -1229,7 +1844,7 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
@@ -1274,7 +1889,7 @@
                                 type="checkbox"
                                 value=""
                                 id="flexCheckDefault"
-                                checked
+                                
                               />
                               <label
                                 class="form-check-label"
