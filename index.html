@@ -367,8 +367,7 @@
             <div class="col-sm">
               <h2>Instructions</h2>
               <p>
-                To be filled in later with instructions about how to use the
-                website.
+                Choose which data you would like to create a customized data set for you! Make sure to hit that export button at the bottom of the page, and you will receive a file in the CSV format with all the data you selected!
               </p>
               <!-- <p>
                   <a
@@ -402,13 +401,16 @@
               </p>
 
               <p><strong>What is your preferred Option?</strong></p>
-              <button value="csv/baseline_data.csv" class="badge rounded-pill bg-light text-dark"
-                onclick="extractAndProcessData('baseline_data.csv')">Baseline Data</button>
-              <button value="csv/modal_data.csv" class="badge rounded-pill bg-light text-dark"
-                onclick="extractAndProcessData('modal_data.csv')">Modal Data</button>
-              <script src="js/functions.js"></script>
+              <button onclick="extractAndProcessData('csv/baseline_data.csv')"
+                class="badge rounded-pill bg-light text-dark"
+                >Baseline Data</button>
+              <button onclick="extractAndProcessData('csv/modal_data.csv')"
+                class="badge rounded-pill bg-light text-dark"
+                >Modal Data</button>
+              <script src="js/extractAndProcessData.js"></script>
 
-            <hr class="dotted-border mt-4" />
+
+            <hr class="dotted-border mt-4">
             <div class="data-section">
               <div class="card shadow rounded-4 mb-3">
                 <!-- Collapsible card header -->
@@ -436,57 +438,62 @@
                         </p>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RECORDING_SESSION_LABEL" checked />
+                            <label class="form-check-label" for="RECORDING_SESSION_LABEL">
                               Participant ID
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="TRIAL_INDEX" />
+                            <label class="form-check-label" for="TRIAL_INDEX">
                               Trial Order
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Unique ID" />
+                            <label class="form-check-label" for="Unique ID">
                               Unique Word ID
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="page" checked />
+                            <label class="form-check-label" for="page">
                               Passage ID
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_ID" />
+                            <label class="form-check-label" for="IA_ID">
                               IA ID
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="text" />
+                            <label class="form-check-label" for="text">
                               Passage Text
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_LABEL" />
+                            <label class="form-check-label" for="IA_LABEL">
                               Word
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Word_Cleaned" />
+                            <label class="form-check-label" for="Word_Cleaned">
                               Word Cleaned
                             </label>
                           </div>
+                        </div>
+                        <div class="card-body shadow rounded-4 scrollable-card-body">
+                          <h5 class="card-title">
+                            <input class="form-check-input checkAllCheckbox" type="checkbox" id="checkAllTrialData"> Check All
+                          </h5>
                         </div>
                       </div>
                     </div>
@@ -519,40 +526,40 @@
                         <h5 class="card-title">Trial Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="EYE_USED" />
+                            <label class="form-check-label" for="EYE_USED">
                               Eye Tracked
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="TRIAL_DWELL_TIME" />
+                            <label class="form-check-label" for="TRIAL_DWELL_TIME">
                               Total Trial Time
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="TRIAL_FIXATION_COUNT" />
+                            <label class="form-check-label" for="TRIAL_FIXATION_COUNT">
                               Total Trial Fixation Count
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="TRIAL_IA_COUNT" />
+                            <label class="form-check-label" for="TRIAL_IA_COUNT">
                               Total Trial Ias
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="TRIAL_TOTAL_VISITED_IA_COUNT" />
+                            <label class="form-check-label" for="TRIAL_TOTAL_VISITED_IA_COUNT">
                               Total Trial IAs Visited
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_VISITED_%" />
+                            <label class="form-check-label" for="IA_VISITED_%">
                               Percent of IAs Visited
                             </label>
                           </div>
@@ -561,34 +568,34 @@
                         <h5 class="card-title">Interest Area Size</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_AREA" />
+                            <label class="form-check-label" for="IA_AREA">
                               IA Size
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_BOTTOM" />
+                            <label class="form-check-label" for="IA_BOTTOM">
                               IA Bottom Side Pixel
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_TOP" />
+                            <label class="form-check-label" for="IA_TOP">
                               IA Top Side Pixel
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_LEFT" />
+                            <label class="form-check-label" for="IA_LEFT">
                               IA Left Side Pixel
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_RIGHT" />
+                            <label class="form-check-label" for="IA_RIGHT">
                               IA Right Side Pixel
                             </label>
                           </div>
@@ -597,14 +604,14 @@
                         <h5 class="card-title">Total Reading Time</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_DWELL_TIME" />
+                            <label class="form-check-label" for="IA_DWELL_TIME">
                               IA Total Reading Time
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_DWELL_TIME_%" />
+                            <label class="form-check-label" for="IA_DWELL_TIME_%">
                               Percent of Time Spent in this IA
                             </label>
                           </div>
@@ -613,54 +620,54 @@
                         <h5 class="card-title">First Fixation Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_DURATION" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_DURATION">
                               First Fixation Duration
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_INDEX" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_INDEX">
                               First Fixation Duration Ordinal Sequence
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_PREVIOUS_FIX_IA" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_PREVIOUS_FIX_IA">
                               Previously Fixated IA
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_RUN_INDEX" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_RUN_INDEX">
                               First Fixation Run Index
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_VISITED_IA_COUNT" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_VISITED_IA_COUNT">
                               Number Previous of IAs Fixated
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_X" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_X">
                               First Fixation X
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIXATION_Y" />
+                            <label class="form-check-label" for="IA_FIRST_FIXATION_Y">
                               First Fixation Y
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_FIX_PROGRESSIVE" />
+                            <label class="form-check-label" for="IA_FIRST_FIX_PROGRESSIVE">
                               First Pass?
                             </label>
                           </div>
@@ -669,73 +676,55 @@
                         <h5 class="card-title">First Run Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_RUN_DWELL_TIME" />
+                            <label class="form-check-label" for="IA_FIRST_RUN_DWELL_TIME">
                               Gaze Duration
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_RUN_FIXATION_%" />
+                            <label class="form-check-label" for="IA_FIRST_RUN_FIXATION_%">
                               Gaze Duration % of Total Time
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_RUN_FIXATION_COUNT" />
+                            <label class="form-check-label" for="IA_FIRST_RUN_FIXATION_COUNT">
                               First Run Fixation Count
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
-                              Fixation Percent
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_RUN_FIXATION_COUNT" />
+                            <label class="form-check-label" for="IA_FIRST_RUN_FIXATION_COUNT">
                               First Run Landing Position
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_RUN_LAUNCH_SITE" />
+                            <label class="form-check-label" for="IA_FIRST_RUN_LAUNCH_SITE">
                               First Run Launch Site
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_SACCADE_AMPLITUDE" />
+                            <label class="form-check-label" for="IA_FIRST_SACCADE_AMPLITUDE">
                               First Run Saccade Amplitude
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
-                              Legal?
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_SACCADE_ANGLE" />
+                            <label class="form-check-label" for="fIA_FIRST_SACCADE_ANGLE">
                               First Run Saccade Angle
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIRST_SACCADE_INDEX" />
+                            <label class="form-check-label" for="IA_FIRST_SACCADE_INDEX">
                               First Run Saccade Index
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
-                              Legal Immediate?
                             </label>
                           </div>
                         </div>
@@ -743,29 +732,29 @@
                         <h5 class="card-title">Fixation Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_FIXATION_%" />
+                            <label class="form-check-label" for="IA_FIXATION_%">
                               Fixation Percent
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_LEGAL" />
+                            <label class="form-check-label" for="IA_LEGAL">
                               Fixation Count
                             </label>
-                          </div>
+                          </div>                        
+                        </div>
+                        <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="flexCheckDefault" />
                             <label class="form-check-label" for="flexCheckDefault">
                               Legal?
                             </label>
                           </div>
-                        </div>
-                        <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
-                              First Run Saccade Angle
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_LEGAL_IMMEDIATE" />
+                            <label class="form-check-label" for="IA_LEGAL_IMMEDIATE">
+                              Legal Immediate?
                             </label>
                           </div>
                         </div>
@@ -773,40 +762,46 @@
                         <h5 class="card-title">Regression Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_IN" />
+                            <label class="form-check-label" for="IA_REGRESSION_IN">
+                              Regression In
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_IN_COUNT" />
+                            <label class="form-check-label" for="IA_REGRESSION_IN_COUNT">
                               Regression In Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_OUT" />
+                            <label class="form-check-label" for="IA_REGRESSION_OUT">
                               Regression Out
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_OUT_COUNT" />
+                            <label class="form-check-label" for="IA_REGRESSION_OUT_COUNT">
                               Regression Out Count
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_OUT_FULL" />
+                            <label class="form-check-label" for="IA_REGRESSION_OUT_FULL">
                               Regression Out Full
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_OUT_FULL_COUNT" />
+                            <label class="form-check-label" for="IA_REGRESSION_OUT_FULL_COUNT">
                               Regression Out Full Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_REGRESSION_PATH_DURATION" />
+                            <label class="form-check-label" for="IA_REGRESSION_PATH_DURATION">
                               Regression Path Duration
                             </label>
                           </div>
@@ -815,37 +810,43 @@
                         <h5 class="card-title">Other Eye Movement Data</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_RUN_COUNT" />
+                            <label class="form-check-label" for="IA_RUN_COUNT">
                               IA Run Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_SELECTIVE_REGRESSION_PATH_DURATION" />
+                            <label class="form-check-label" for="IA_SELECTIVE_REGRESSION_PATH_DURATION">
                               Selective Regression Path Duration
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Skip?
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_SKIP" />
+                            <label class="form-check-label" for="IA_SKIP">
+                              Skip?
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IA_SPILLOVER" />
+                            <label class="form-check-label" for="IA_SPILLOVER">
                               Spillover Time
                             </label>
                           </div>
+                        </div>
+                        <div class="card-body shadow rounded-4 scrollable-card-body">
+                          <h5 class="card-title">
+                            <input class="form-check-input checkAllCheckbox" type="checkbox" id="checkAllTrialData"> Check All
+                          </h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              
 
               <div class="card shadow rounded-4 mb-3">
                 <!-- Collapsible card header -->
@@ -873,12 +874,12 @@
                           Christianson, 2018) and all other variables were generated
                           using the South Carolina Psycholinguistic Metabase (SCOPE;
                           Gao et al., 2022)
-                        </p>
+                        </P>
                         <h5 class="card-title">Length</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Word_Length" />
+                            <label class="form-check-label" for="Word_Length">
                               Word Length
                             </label>
                           </div>
@@ -887,90 +888,90 @@
                         <h5 class="card-title">Predectability</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Total_Response_Count" />
+                            <label class="form-check-label" for="Total_Response_Count">
                               Total Response Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Unique_Count" />
+                            <label class="form-check-label" for="Unique_Count">
                               Unique Response Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="OrthographicMatch" />
+                            <label class="form-check-label" for="OrthographicMatch">
                               Orthographic Match
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="OrthoMatchModel" />
+                            <label class="form-check-label" for="OrthoMatchModel">
                               Orthographic Match Model
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="IsModalResponse" />
+                            <label class="form-check-label" for="IsModalResponse">
                               Modal Response?
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ModalResponse" />
+                            <label class="form-check-label" for="ModalResponse">
                               Modal Response
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ModalResponseCount" />
+                            <label class="form-check-label" for="ModalResponseCount">
                               Modal Response Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Certainty" />
+                            <label class="form-check-label" for="Certainty">
                               Certainty
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="POSMatch" />
+                            <label class="form-check-label" for="POSMatch">
                               Part of Speech Match
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="POSMatchModel" />
+                            <label class="form-check-label" for="POSMatchModel">
                               Part of Speech Match Model
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="InflectionMatch" />
+                            <label class="form-check-label" for="InflectionMatch">
                               Inflection Match
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="InflectionMatchModel" />
+                            <label class="form-check-label" for="InflectionMatchModel">
                               Inflection Match Model
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="LSA_Context_Score" />
+                            <label class="form-check-label" for="LSA_Context_Score">
                               LSA Context Score
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="LSA_Response_Match_Score" />
+                            <label class="form-check-label" for="LSA_Response_Match_Score">
                               LSA Response Match Score
                             </label>
                           </div>
@@ -979,20 +980,20 @@
                         <h5 class="card-title">Part of Speech</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="POS_CLAWS" />
+                            <label class="form-check-label" for="POS_CLAWS">
                               Part of Speech
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Word_Content_Or_Function" />
+                            <label class="form-check-label" for="Word_Content_Or_Function">
                               Content or Function?
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="flexCheckDefault" />
+                            <label class="form-check-label" for="Word_POS">
                               Part of Speech Limited
                             </label>
                           </div>
@@ -1001,28 +1002,28 @@
                         <h5 class="card-title">Frequency and Familiarity</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Freq_HAL" />
+                            <label class="form-check-label" for="Freq_HAL">
                               Frequency HAL
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Freq_SUBTLEXUS" />
+                            <label class="form-check-label" for="Freq_SUBTLEXUS">
                               Frequency SUBTLEXus
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Fam_Brys" />
+                            <label class="form-check-label" for="Fam_Brys">
                               Familiarity
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Prevalence_Brys" />
+                            <label class="form-check-label" for="Prevalence_Brys">
                               Prevalence
                             </label>
                           </div>
@@ -1031,28 +1032,28 @@
                         <h5 class="card-title">Phonology</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NPhon" />
+                            <label class="form-check-label" for="NPhon">
                               Number of Phonemes
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NSyll" />
+                            <label class="form-check-label" for="NSyll">
                               Number of Syllables
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PLD20" />
+                            <label class="form-check-label" for="PLD20">
                               PLD20
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Phon_N" />
+                            <label class="form-check-label" for="Phon_N">
                               Phonmeic Neighbors
                             </label>
                           </div>
@@ -1061,28 +1062,34 @@
                         <h5 class="card-title">Semantics</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Conc_Brys" />
+                            <label class="form-check-label" for="Conc_Brys">
+                              Concreteness
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Sem_Diversity" />
+                            <label class="form-check-label" for="Sem_Diversity">
                               Semantic Diversity
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Sem_N" />
+                            <label class="form-check-label" for="Sem_N">
                               Semantic Neighbors
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Sem_N_D" />
+                            <label class="form-check-label" for="Sem_N_D">
                               Semantic Neighbors D
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Word2Vec" />
+                            <label class="form-check-label" for="Word2Vec">
                               Vectors
                             </label>
                           </div>
@@ -1091,14 +1098,14 @@
                         <h5 class="card-title">Orthography-Phonology</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Phonographic_N" />
+                            <label class="form-check-label" for="Phonographic_N">
                               Phonographic Neighbors
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Phonographic_N_Freq" />
+                            <label class="form-check-label" for="Phonographic_N_Freq">
                               Phonographic Neighbors Frequency
                             </label>
                           </div>
@@ -1107,11 +1114,16 @@
                         <h5 class="card-title">Morphology</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NMorph" />
+                            <label class="form-check-label" for="NMorph">
                               Number of Morphemes
                             </label>
                           </div>
+                        </div>
+                        <div class="card-body shadow rounded-4 scrollable-card-body">
+                          <h5 class="card-title">
+                            <input class="form-check-input checkAllCheckbox" type="checkbox" id="checkAllTrialData"> Check All
+                          </h5>
                         </div>
                       </div>
                     </div>
@@ -1147,28 +1159,34 @@
                         <h5 class="card-title">Vocabulary</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Vocabulary Raw" />
+                            <label class="form-check-label" for="Vocabulary Raw">
                               Vocabulary Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Vocabulary Percentile GE" />
+                            <label class="form-check-label" for="Vocabulary Percentile GE">
                               Vocabulary Percentile GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Vocabulary Percentile AE
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="VocabIndGE" />
+                            <label class="form-check-label" for="VocabIndGE">
+                              Vocabulary Index GE
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Vocabulary Percentile AE" />
+                            <label class="form-check-label" for="Vocabulary Percentile AE">
+                              Vocabulary Percentile AE
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Vocabulary Index AE" />
+                            <label class="form-check-label" for="Vocabulary Index AE">
                               Vocabulary Index AE
                             </label>
                           </div>
@@ -1177,34 +1195,34 @@
                         <h5 class="card-title">Comprehension</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="CompRaw" />
+                            <label class="form-check-label" for="CompRaw">
                               Comprehension Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="CompPercGE" />
+                            <label class="form-check-label" for="CompPercGE">
                               Comprehension Percentile GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="CompIndGE" />
+                            <label class="form-check-label" for="CompIndGE">
                               Comprehension Index GE
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="CompPercAE" />
+                            <label class="form-check-label" for="CompPercAE">
                               Comprehension Percentile AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="CompIndAE" />
+                            <label class="form-check-label" for="CompIndAE">
                               Comprehension Index AE
                             </label>
                           </div>
@@ -1213,40 +1231,40 @@
                         <h5 class="card-title">General Reading Ability</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDSumGE" />
+                            <label class="form-check-label" for="NDSumGE">
                               Nelson Denny Sum GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDPercGE" />
+                            <label class="form-check-label" for="NDPercGE">
                               Nelson Denny Percentile GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDGenReadAbGE" />
+                            <label class="form-check-label" for="NDGenReadAbGE">
                               Nelson Denny General Reading Ability GE
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDSumAE" />
+                            <label class="form-check-label" for="NDSumAE">
                               Nelson Denny Sum AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDPercAE" />
+                            <label class="form-check-label" for="NDPercAE">
                               Nelson Denny Percentile AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NDGenReadAbAE" />
+                            <label class="form-check-label" for="NDGenReadAbAE">
                               Nelson Denny General Reading Ability AE
                             </label>
                           </div>
@@ -1255,20 +1273,20 @@
                         <h5 class="card-title">Working Memory</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="OSpan" />
+                            <label class="form-check-label" for="OSpan">
                               Operation Span
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="OSpan80" />
+                            <label class="form-check-label" for="OSpan80">
                               Operation Span Trimmed
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="OspanMath" />
+                            <label class="form-check-label" for="OspanMath">
                               Operation Span Math
                             </label>
                           </div>
@@ -1277,240 +1295,240 @@
                         <h5 class="card-title">Phonological Processing</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ElisionRaw" />
+                            <label class="form-check-label" for="ElisionRaw">
                               Elision Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ElisionPerc" />
+                            <label class="form-check-label" for="ElisionPerc">
                               Elision Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ElisionStd" />
+                            <label class="form-check-label" for="ElisionStd">
                               Elision Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ElisionAE" />
+                            <label class="form-check-label" for="ElisionAE">
                               Elision AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="ElisionGE" />
+                            <label class="form-check-label" for="ElisionGE">
                               Elision GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="BlendingRaw" />
+                            <label class="form-check-label" for="BlendingRaw">
                               Blending Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="BlendingPerc" />
+                            <label class="form-check-label" for="BlendingPerc">
                               Blending Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="BlendingStd" />
+                            <label class="form-check-label" for="BlendingStd">
                               Blending Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="BlendingAE" />
+                            <label class="form-check-label" for="BlendingAE">
                               Blending AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="BlendingGE" />
+                            <label class="form-check-label" for="BlendingGE">
                               Blending GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonAwarSum" />
+                            <label class="form-check-label" for="PhonAwarSum">
                               Phonological Awareness
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonAwarPerc" />
+                            <label class="form-check-label" for="PhonAwarPerc">
                               Phonological Awareness Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonAwarComp" />
+                            <label class="form-check-label" for="PhonAwarComp">
                               Phonological Awareness Composite
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MemRaw" />
+                            <label class="form-check-label" for="MemRaw">
                               Memory Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MemPerc" />
+                            <label class="form-check-label" for="MemPerc">
                               Memory Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MemStd" />
+                            <label class="form-check-label" for="MemStd">
                               Memory Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MemAE" />
+                            <label class="form-check-label" for="MemAE">
                               Memory AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MemGE" />
+                            <label class="form-check-label" for="MemGE">
                               Memory GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NonwordRaw" />
+                            <label class="form-check-label" for="NonwordRaw">
                               Nonword Repetition Raw
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NonwordPerc" />
+                            <label class="form-check-label" for="NonwordPerc">
                               Nonword Repetition Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NonwordStd" />
+                            <label class="form-check-label" for="NonwordStd">
                               Nonword Repetition Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NonwordAE" />
+                            <label class="form-check-label" for="NonwordAE">
                               Nonword Repetition AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="NonwordGE" />
+                            <label class="form-check-label" for="NonwordGE">
                               Nonword Repetition GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonMemSum" />
+                            <label class="form-check-label" for="PhonMemSum">
                               Phonological Memory
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonMemPerc" />
+                            <label class="form-check-label" for="PhonMemPerc">
                               Phonological Memory Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="PhonMemComp" />
+                            <label class="form-check-label" for="PhonMemComp">
                               Phonological Memory Composite
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapDigTime" />
+                            <label class="form-check-label" for="RapDigTime">
                               Rapid Digit Time
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapDigPerc" />
+                            <label class="form-check-label" for="RapDigPerc">
                               Rapid Digit Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapDigStd" />
+                            <label class="form-check-label" for="RapDigStd">
                               Rapid Digit Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapDigAE" />
+                            <label class="form-check-label" for="RapDigAE">
                               Rapid Digit AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapDigGE" />
+                            <label class="form-check-label" for="RapDigGE">
                               Rapid Digit GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapLetTime" />
+                            <label class="form-check-label" for="RapLetTime">
                               Rapid Letter Time
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapLetPerc" />
+                            <label class="form-check-label" for="RapLetPerc">
                               Rapid Letter Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapLetStd" />
+                            <label class="form-check-label" for="RapLetStd">
                               Rapid Letter Standard
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapLetAE" />
+                            <label class="form-check-label" for="RapLetAE">
                               Rapid Letter AE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapLetGE" />
+                            <label class="form-check-label" for="RapLetGE">
                               Rapid Letter GE
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapNamSum" />
+                            <label class="form-check-label" for="RapNamSum">
                               Rapid Naming
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapNamPerc" />
+                            <label class="form-check-label" for="RapNamPerc">
                               Rapid Naming Percentile
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="RapNamComp" />
+                            <label class="form-check-label" for="RapNamComp">
                               Rapid Naming Composite
                             </label>
                           </div>
@@ -1519,20 +1537,20 @@
                         <h5 class="card-title">Spelling</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="SpellDict" />
+                            <label class="form-check-label" for="SpellDict">
                               Spelling Dictation
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="SpellRecoHit" />
+                            <label class="form-check-label" for="SpellRecoHit">
                               Spelling Recognition Hit
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="SpellRecoFA" />
+                            <label class="form-check-label" for="SpellRecoFA">
                               Spelling Recognition False Alarm
                             </label>
                           </div>
@@ -1541,20 +1559,20 @@
                         <h5 class="card-title">Morphology</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MorphCount" />
+                            <label class="form-check-label" for="MorphCount">
                               Morphology Count
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MorphDist" />
+                            <label class="form-check-label" for="MorphDist">
                               Morphology Distance
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="MorphFill" />
+                            <label class="form-check-label" for="MorphFill">
                               Morphology Derivation
                             </label>
                           </div>
@@ -1563,74 +1581,82 @@
                         <h5 class="card-title">Demographics</h5>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Age" />
+                            <label class="form-check-label" for="Age">
                               Age
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Gender" />
+                            <label class="form-check-label" for="Gender">
                               Gender
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="GenderBinary" />
+                            <label class="form-check-label" for="GenderBinary">
                               Gender Binary
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="EnglishNat" />
+                            <label class="form-check-label" for="EnglishNat">
                               English Native
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Bilingual" />
+                            <label class="form-check-label" for="Bilingual">
                               Bilingual
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="SecondLang" />
+                            <label class="form-check-label" for="SecondLang">
                               Second Language
                             </label>
                           </div>
                         </div>
                         <div class="col">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Year" />
+                            <label class="form-check-label" for="Year">
                               Year in School
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Major" />
+                            <label class="form-check-label" for="Major">
                               Major
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input dataCheckbox" type="checkbox" value="sameValueRepeated, consistentPattern, containsZeros, containsEmptyCells" id="Race" />
+                            <label class="form-check-label" for="Race">
                               Race
                             </label>
                           </div>
+                        </div>
+                        <div class="card-body shadow rounded-4 scrollable-card-body">
+                          <h5 class="card-title">
+                            <input class="form-check-input checkAllCheckbox" type="checkbox" id="checkAllTrialData"> Check All
+                          </h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <button onclick="exportSelectedData()">Export Selected Data</button>
+              <script src="js/functions.js"></script>
             </div>
           </div>
         </div>
       </article>
     </article>
+    
   </div>
 
   <footer>
@@ -1692,7 +1718,6 @@
     </nav>
     <p>&#169; Stetson University</p>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
